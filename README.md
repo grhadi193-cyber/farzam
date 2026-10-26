@@ -1,11 +1,35 @@
-<div align="center">
+# فرزام (Farzam) — سامانه هوشمند مدیریت ناوگان و تله‌متری زنده
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+وب‌سایت تعاملی و سه‌بعدی معرفی اکوسیستم یکپارچه **فرزام** (سخت‌افزار ردیاب GPS + نرم‌افزار مدیریت ناوگان **مای‌فرزام / MyFarzam** + سفارشی‌سازی سازمانی).
 
-  <h1>Built with AI Studio</h2>
+## مستندات طراحی و کارگردانی هنری
+پیش از پیاده‌سازی، تحلیل کامل هندسه لوگو (`brand/logo.svg`)، تایپوگرافی (`brand/typography.svg`)، سیستم توکن‌های رنگی و حرکتی، بررسی سه مسیر هنری و استوری‌بورد ۹ فصل در فایل [`DIRECTION.md`](./DIRECTION.md) تدوین شده است.
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+## ساختار فنی پروژه
+- **چارچوب:** Vite + React 19 + TypeScript (`lang="fa" dir="rtl"`)
+- **موتور سه‌بعدی:** Three.js (`three@0.170.0`) با نورپردازی استودیویی `RoomEnvironment`، تشخیص خودکار `isSoftwareGl`، توقف هوشمند صحنه‌های خارج از دید با `IntersectionObserver` و جایگزین خودکار SVG در صورت عدم پشتیبانی از WebGL یا فعال بودن `prefers-reduced-motion`.
+- **فونت رسمی:** خانواده فونت **پیدا (Peyda)** با وزن‌های `300` تا `900` از مسیر `/brand/fonts/woff2/` به همراه پیش‌بارگذاری (`preload`) وزن‌های کلیدی.
+- **توکن‌های طراحی:** متمرکز در [`src/styles/tokens.css`](./src/styles/tokens.css)؛ مشتق‌شده صرفاً از سه رنگ اصلی برند (`#FF742E`، `#102333`، `#E8DECD`).
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+## نحوه اجرا و ساخت (Run & Build)
 
-</div>
+### ۱. نصب وابستگی‌ها
+```bash
+npm install
+```
+
+### ۲. اجرای سرور توسعه (پورت ۳۰۰۰)
+```bash
+npm run dev
+```
+
+### ۳. اجرای تست‌های واحد منطق تله‌متری و گزارش‌ها
+```bash
+npx --yes tsx --test src/utils/telemetryLogic.test.ts
+```
+
+### ۴. بررسی تایپ‌ها و ساخت نسخه نهایی (Production Build)
+```bash
+npm run lint
+npm run build
+```

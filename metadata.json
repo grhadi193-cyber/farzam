@@ -1,0 +1,6 @@
+{
+  "name": "فرزام | سامانه هوشمند مدیریت ناوگان و تله‌متری زنده",
+  "description": "سخت‌افزار ردیاب GPS، نرم‌افزار مدیریت ناوگان مای‌فرزام (MyFarzam) و سفارشی‌سازی سازمانی در یک اکوسیستم یکپارچه.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
